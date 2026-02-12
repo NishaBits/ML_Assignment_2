@@ -13,6 +13,7 @@ kNN	0.956140	0.995906	0.934211	1.000000	0.965986	0.908615
 Naive Bayes	0.973684	0.998362	0.959459	1.000000	0.979310	0.944733
 Random Forest (Ensemble)	0.964912	0.995251	0.958904	0.985915	0.972222	0.925285
 XGBoost (Ensemble)	0.956140	0.995087	0.958333	0.971831	0.965035	0.906379
+<img width="468" height="172" alt="image" src="https://github.com/user-attachments/assets/c92daee0-4023-4305-9d78-5d0af65f8a2c" />
 
 d) Observations on Model Performance
 ML Model Name	Observation about model performance
@@ -23,4 +24,4 @@ Naive Bayes	Best overall performer with highest accuracy (0.9737), AUC (0.9984),
 Random Forest (Ensemble)	Very stable and reliable model with consistently high performance across all metrics, reducing overfitting compared to a single decision tree.
 XGBoost (Ensemble)	Strong ensemble model with good generalization, but slightly weaker than Random Forest and Naive Bayes on this dataset.
 
-
+<img width="432" height="390" alt="image" src="https://github.com/user-attachments/assets/ba2257b8-d41e-47ed-b896-8c72f3fbf3d7" />
