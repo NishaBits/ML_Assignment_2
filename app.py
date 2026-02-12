@@ -4,6 +4,8 @@ import joblib
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import (
     accuracy_score,
     roc_auc_score,
@@ -22,6 +24,36 @@ st.write("""
 Upload your **test CSV file**, choose a model, and see predictions plus evaluation metrics.
 (Your file must contain a column named **'target'**.)
 """)
+# -------------------------------
+# DOWNLOAD TEST DATA OPTION
+# -------------------------------
+
+st.subheader("Download Test Dataset")
+
+# Load dataset
+data = load_breast_cancer()
+X = pd.DataFrame(data.data, columns=data.feature_names)
+y = pd.Series(data.target, name="target")
+
+# Train-test split (same as training script)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Combine test features and target
+test_df = X_test.copy()
+test_df["target"] = y_test.values
+
+# Convert to CSV
+csv = test_df.to_csv(index=False)
+
+# Download button
+st.download_button(
+    label="Download Test Data (CSV)",
+    data=csv,
+    file_name="test_dataset.csv",
+    mime="text/csv"
+)
 
 # -----------------------------
 # MODEL SELECTION
